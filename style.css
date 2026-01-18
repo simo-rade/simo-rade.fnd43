@@ -1,0 +1,22 @@
+p {
+    color: red;
+}
+
+#diy {
+    color: blue;
+}
+#hayami {
+    color: hsl(30, 100%, 50%);
+}
+
+#input {
+    color: #ff0080;
+}
+
+#Output {
+    color: #ff000d;
+}
+
+.warning {
+    color: deeppink;
+}
