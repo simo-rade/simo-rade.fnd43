@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>電気ＤＩＹ便利計算ツール</title>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>DIG＿電気ＤＩＹ便利計算ツール</h1>
+
+  <p>＜自己紹介＞</p>
+  <p id="diy">
+  　トヨタ記念病院で主に情報システム系を３２年勤務しています。<br>
+  　紙カルテ・伝票運用の頃から、時代に合わせて、質の高い良い医療を提供する為、<br>
+  　電子カルテシステムやＯＡ端末の導入や更新を推進しています。<br>
+  　この度、医療ＤＸの観点から、高額化するシステム開発費の軽減もあり<br>
+  　内製開発できる手法をＤＩＧで学びにきました。よろしくお願い致します。<br>
+  </p>
+  <img src="it_syoukai.JPG">
+
+  <p>＜ツール選定の理由＞</p>
+  <p id="diy">
+  　私の趣味で発電というのがあり、そこに使う電線は、流れる電流（Ａ）の大きさによって<br>
+  　変わる為、今回、電圧と消費電力を入力する事で、<br>
+  　電流を計算し、電線の太さまで提案するツールを作成しました。<br>
+  </p>
+  <img src="diy_haisen.JPG">
+
+  
+  <p>＜ツール説明＞</p>
+  <p id="diy">
+  　（１）消費電力（Ｗ）と　電圧（Ｖ）を入力する。<br>
+  　（２）消費電力（Ｗ）÷　電圧（Ｖ）で　電流（Ａ）を求める<br>
+  　（３）下の「電流早見表」で求めた電流（Ａ）から、合致する導線の種類を提案する。<br>
+  </p>
+
+  <p>＜電流早見表＞</p>
+  <p id="diy">
+  <img src="ap_hayami.JPG">
+  </p>
+
+  
+  <tr>
+    <p>＜入力領域＞</p> 
+    <p id="input"> 
+    <label for="inOutDoors">  　●屋内外区分：</label>
+    <input type="text" id="inOutDoors" name="inOutDoors" required minlength="4" maxlength="8" size="10" /><br>
+  
+    <label for="operatingVoltage">  　●使用電圧（Ｖ）：</label>
+    <input type="text" id="operatingVoltage" name="operatingVoltage" required minlength="4" maxlength="8" size="10" /><br>
+
+    <label for="powerUsed">  　●使用電流（Ｗ）：</label>
+    <input type="text" id="powerUsed" name="powerUsed" required minlength="4" maxlength="8" size="10" /><br>
+
+    </p>
+  </tr>
+
+  <tr>
+    <p>＜出力領域＞</p>
+    <p id="output">
+    　●使用電流（Ａ）：<br>
+    　●ベア電流：<br>
+    　●スタイル：<br>
+    　●導線本数（１本０．０８ｍｍ）：<br>
+    　●絶縁材（外径／ｍｍ）：<br>
+    　●絶縁材（平均厚さ／ｍｍ）：<br>
+    　●適正対象製品：<br>
+    </p>
+  </tr>
+
+</body>
+
+</html>
