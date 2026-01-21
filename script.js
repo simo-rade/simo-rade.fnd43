@@ -1,22 +1,9 @@
 'use strict'
 // 1行目に記載している 'use strict' は削除しないでください
 
-//　ＤＩＧ＿プログラミング基礎＿最終発表会＿2025/1/22（木）　　1211547　カズさん　こと　下川和輝
+//　ＤＩＧ＿プログラミング基礎＿最終発表会＿2025/1/22（木）　　1211547　シモさん　こと　下川和輝
 //　タイトル：　電気ＤＩＹ便利計算ツール
 
-//　テスト関数説明 test(actual(関数機能の要件)、expected(期待値)）　
-// 実際の使用記述　test(関数("引数１"), "期待値（結果）");
-// TTD ----------
-function test(actual, expected) {
-    if (JSON.stringify(actual) === JSON.stringify(expected)) {
-        console.log("OK! Test PASSED.");
-    } else {
-        console.error("Test FAILED. Try again!");
-        console.log("    actual: ", actual);
-        console.log("  expected: ", expected);
-        console.trace();
-    }
-}
 
 /**関数シグネチャー
  * @param {string} nameArray 与えれる名前（文字列） 
@@ -47,27 +34,11 @@ const wireTypeObjet = [
     {電流範囲: "53A以上",導体本数: "規格外",絶縁体外径: "規格外"}
 ];
 
-// /**関数シグネチャー
-//  * @param {number} inputVolt 入力電圧（Ｖ） 
-//  * @param {number} inputWatts 入力電力（Ｗ） 
-//  * @returns {number} outputAmpere 出力電流（Ａ）
-//  * */
-// function currenting(inputVolt, inputWatts) {
-//     console.log("入力電圧（Ｖ）：" + inputVolt);
-//     console.log("使用電力（Ｗ）：" + inputWatts);
-//     outputAmpere = inputWatts / inputVolt;
-//     console.log("使用電流（Ａ）：" + outputAmpere);
-//     return outputAmpere;
-// }
-// // test(currenting(12, 120), 10);
-// // test(currenting(14, 168), 12);
-// const = currenting(operatingVoltage, powerUsed);
-
 function output(){
     const inputWatts = Number(document.getElementById("inputWatts").value);
     const inputVolt = Number(document.getElementById("inputVolt").value);
     let outputAmpere = 0;
-    outputAmpere = inputWatts / inputVolt;
+    outputAmpere = Math.floor((inputWatts / inputVolt)*100)/100;
 
     console.log("入力電力：" + inputWatts);
     console.log("入力電圧：" + inputVolt);
@@ -105,22 +76,46 @@ function output(){
     console.log(wireTypeObjet[wireType].絶縁体外径);
 
 //結果出力領域　－－－－－－－－－－－－－－－－－－－－－－
-    const output = document.createElement('p');
-    output.textContent =
-        "＜出力領域＞" +
-        "　●出力電流（Ａ）：" + outputAmpere + "<br>" +
-        "　●合致電流範囲：" + wireTypeObjet[wireType].電流範囲 + "<br>" +
-        "　●導体本数：（1本0.08mm）" + wireTypeObjet[wireType].導体本数 + "<br>" +
-        "　●絶縁体外径（mm）：" + wireTypeObjet[wireType].絶縁体外径 + "<br>";
+    const input1 = document.createElement('p');
+    input1.id = "input";
+    input1.textContent =
+        "　●入力電力：" + inputWatts + "W　／　●入力電圧：" + inputVolt + "V";
+    document.body.appendChild(input1);
 
-    document.body.appendChild(output);
+    const output1 = document.createElement('p');
+    output1.id = "output";
+    output1.textContent =
+        "　●出力電流：" + outputAmpere + "A";
+    document.body.appendChild(output1);
+
+    const output2 = document.createElement('p');
+    output2.id = "output";
+    output2.textContent =
+        "　●合致電流範囲：" + wireTypeObjet[wireType].電流範囲;
+    document.body.appendChild(output2);
+
+    const output3 = document.createElement('p');
+    output3.id = "output";
+    output3.textContent =
+        "　●導体本数：（1本0.08mm）" + wireTypeObjet[wireType].導体本数 + "本";
+    document.body.appendChild(output3);
+
+    const output4 = document.createElement('p');
+    output4.id = "output";
+    output4.textContent =
+        "　●絶縁体外径：" + wireTypeObjet[wireType].絶縁体外径 + "mm";
+    document.body.appendChild(output4);
+
+    const output5 = document.createElement('p');
+    output5.id = "line";
+    output5.textContent =
+        "　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝";
+    document.body.appendChild(output5);
+
 }
 
+//計算実行のボタン押下で処理実行－－－－－－－－－－－－－－－－－－－－
 const button = document.getElementById("button");
 button.addEventListener("click",output);
-
 //－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-
-
-
 
