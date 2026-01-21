@@ -1,8 +1,7 @@
 'use strict'
-// 1行目に記載している 'use strict' は削除しないでください
 
 //　ＤＩＧ＿プログラミング基礎＿最終発表会＿2025/1/22（木）　　1211547　シモさん　こと　下川和輝
-//　タイトル：　電気ＤＩＹ便利計算ツール
+//　タイトル：　電気ＤＩＹの便利計算ツール
 
 
 /**関数シグネチャー
@@ -118,4 +117,5 @@ function output(){
 const button = document.getElementById("button");
 button.addEventListener("click",output);
 //－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
 
