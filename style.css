@@ -7,14 +7,21 @@
 
 #input {
     color: #ff0080;
+    font-size:x-large;
 }
 
 #comment {
     color: #000000;
+    font-size:small;
 }
 
-#Output {
+#output {
     color: #ff000d;
+    font-size:x-large;
+}
+
+#line {
+    color: #027b20;
 }
 
 .warning {
@@ -30,13 +37,16 @@
 }
 
 #button {
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 60px;
     background-color: rgb(255, 242, 0);
     color: rgb(0, 0, 0);
-    margin: auto;
+    font-size:x-large;
+    margin: 20px auto 20px 400px;
 }
+
 
 p {
     color: rgb(248, 5, 5);
 }
+
